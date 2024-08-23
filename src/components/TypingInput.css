@@ -1,0 +1,13 @@
+/* src/components/TypingInput.css */
+.TypingInput {
+    margin-top: 20px;
+}
+
+.TypingInput input {
+    font-size: 1.5em;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}

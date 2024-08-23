@@ -1,0 +1,46 @@
+/* src/components/WordDisplay.css */
+.WordDisplay {
+    font-size: 72px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px auto;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+/* Timer styling */
+.Timer {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Results styling */
+.Results {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.Results h2 {
+    font-size: 32px;
+}
+
+.Results p {
+    font-size: 24px;
+}
+
+.Results button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+  

@@ -1,0 +1,12 @@
+.paragraph-display {
+    font-size: 25px;
+    white-space: pre-wrap;
+}
+
+.correct {
+    color: green; /* Change text color to green */
+}
+
+.incorrect {
+    color: red; /* Change text color to red */
+}
