@@ -124,4 +124,10 @@ const handleInputChange = (e) => {
   }
 };
 
+// Calculate Words Per Minute (WPM)
+const calculateWPM = () => ((correctWords / (60 - timeLeft)) * 60).toFixed(2);
+
+// Calculate accuracy as a percentage
+const calculateAccuracy = () => ((correctWords / (correctWords + incorrectWords)) * 100).toFixed(2);
+
 
