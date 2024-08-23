@@ -130,4 +130,22 @@ const calculateWPM = () => ((correctWords / (60 - timeLeft)) * 60).toFixed(2);
 // Calculate accuracy as a percentage
 const calculateAccuracy = () => ((correctWords / (correctWords + incorrectWords)) * 100).toFixed(2);
 
+// Generate feedback based on WPM
+const getFeedback = (wpm) => {
+  if (wpm >= 80) return 'Excellent speed!';
+  if (wpm >= 60) return 'Great speed!';
+  if (wpm >= 40) return 'Average speed!';
+  return 'Your typing speed needs improvement.';
+};
+
+// Generate feedback based on accuracy
+const getAccuracyFeedback = (accuracy) => {
+  if (accuracy >= 90) return 'Excellent accuracy!';
+  if (accuracy >= 75) return 'Good accuracy!';
+  if (accuracy >= 50) return 'Fair accuracy!';
+  return 'Your accuracy needs improvement.';
+};
+
+
+
 
