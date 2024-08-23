@@ -61,3 +61,7 @@ const App = () => {
   const [isFinished, setIsFinished] = useState(false); // Whether the test has finished
   const [showPrompt, setShowPrompt] = useState(true); // Whether to show the prompt or not
   const [mode, setMode] = useState('words'); // Current mode ('words' or 'paragraph')
+
+  //custom hooks to manage the timer and content updates
+  useTimer(isStarted, timeLeft, setTimeLeft, setIsFinished, setIsStarted);
+  useContentUpdate(isStarted, mode, difficulty, paragraphDifficulty, setWords, setCurrentWord, setParagraph);
