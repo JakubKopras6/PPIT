@@ -45,3 +45,19 @@ const useContentUpdate = (isStarted, mode, difficulty, paragraphDifficulty, setW
       }
   }, [isStarted, mode, difficulty, paragraphDifficulty]);
 };
+
+const App = () => {
+  // State hooks for managing the app's state
+  const [difficulty, setDifficulty] = useState(null); // Difficulty level for word mode
+  const [paragraphDifficulty, setParagraphDifficulty] = useState(null); // Difficulty level for paragraph mode
+  const [words, setWords] = useState([]); // List of words to be displayed
+  const [currentWord, setCurrentWord] = useState(''); // Current word to be typed
+  const [paragraph, setParagraph] = useState(''); // Paragraph to be typed
+  const [input, setInput] = useState(''); // User input
+  const [correctWords, setCorrectWords] = useState(0); // Count of correctly typed words
+  const [incorrectWords, setIncorrectWords] = useState(0); // Count of incorrectly typed words
+  const [timeLeft, setTimeLeft] = useState(60); // Time left for the test
+  const [isStarted, setIsStarted] = useState(false); // Whether the test has started
+  const [isFinished, setIsFinished] = useState(false); // Whether the test has finished
+  const [showPrompt, setShowPrompt] = useState(true); // Whether to show the prompt or not
+  const [mode, setMode] = useState('words'); // Current mode ('words' or 'paragraph')
