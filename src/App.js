@@ -75,3 +75,14 @@ const App = () => {
     setCorrectWords(0);
     setIncorrectWords(0);
     setTimeLeft(60);
+
+     // Set initial words or paragraph based on the mode
+     if (mode === 'words') {
+      setWords(WORDS[difficulty]);
+      setCurrentWord(getRandomWord(WORDS[difficulty]));
+  } else if (mode === 'paragraph') {
+      setParagraph(getRandomParagraph(PARAGRAPHS[paragraphDifficulty || 'easy']));
+  }
+};
+
+
