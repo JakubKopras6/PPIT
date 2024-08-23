@@ -1,3 +1,21 @@
+Practice your muscle memory with single word shootout mode or get an overall result for your tying speed in paragraph mode. 
+Pragraph mode will give you an accurate assesment of your typing speed, whilst word mode will let you practice muscle memory 
+and get you words per minute score up. The average typing speed is 40 WPM. 
+
+User guide.
+
+Select difficulty for either word or paragraph mode.
+
+In word mode press space just as if you were typing a sentence to move onto the next word. 
+Word mode will not let you move onto the next word unless you have typed your current word correctly!
+
+You are less restricted in paragraph mode. Type the words you see displayed as quickly and as accuratley as you can.
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
