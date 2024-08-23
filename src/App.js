@@ -65,3 +65,13 @@ const App = () => {
   //custom hooks to manage the timer and content updates
   useTimer(isStarted, timeLeft, setTimeLeft, setIsFinished, setIsStarted);
   useContentUpdate(isStarted, mode, difficulty, paragraphDifficulty, setWords, setCurrentWord, setParagraph);
+
+  // Function to handle the start of the test
+  const handleStart = () => {
+    setShowPrompt(false);
+    setIsStarted(true);
+    setIsFinished(false);
+    setInput('');
+    setCorrectWords(0);
+    setIncorrectWords(0);
+    setTimeLeft(60);
