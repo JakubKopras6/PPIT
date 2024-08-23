@@ -12,4 +12,4 @@ const Timer = ({ timeLeft }) => {
 
 export default Timer;
 
-// i am a comment 
+
