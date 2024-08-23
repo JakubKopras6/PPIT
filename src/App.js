@@ -163,6 +163,78 @@ const isStartButtonDisabled = () => {
   return !mode;
 };
 
+return (
+  <div className="app">
+      {/* Render the prompt if the test hasn't started yet */}
+      {showPrompt && (
+          <div className="prompt">
+              <h1>Welcome to the Typing Speed Test!</h1>
+              <p>Select a mode to begin:</p>
+              <button onClick={() => setMode('words')} className={`mode-button ${mode === 'words' ? 'selected' : ''}`}>Word Mode</button>
+              <button onClick={() => setMode('paragraph')} className={`mode-button ${mode === 'paragraph' ? 'selected' : ''}`}>Paragraph Mode</button>
+              {mode === 'words' && (
+                  <>
+                      <p>Select word difficulty:</p>
+                      {['easy', 'medium', 'intermediate'].map(diff => (
+                          <button key={diff} onClick={() => setDifficulty(diff)} className={`difficulty-button ${difficulty === diff ? 'selected' : ''}`}>
+                              {diff.charAt(0).toUpperCase() + diff.slice(1)}
+                          </button>
+                      ))}
+                  </>
+              )}
+              {mode === 'paragraph' && (
+                  <>
+                      <p>Select a paragraph difficulty:</p>
+                      {['easy', 'medium', 'intermediate'].map(diff => (
+                          <button key={diff} onClick={() => setParagraphDifficulty(diff)} className={`difficulty-button ${paragraphDifficulty === diff ? 'selected' : ''}`}>
+                              {diff.charAt(0).toUpperCase() + diff.slice(1)}
+                          </button>
+                      ))}
+                  </>
+              )}
+              <button onClick={handleStart} className="start-button" disabled={isStartButtonDisabled()}>Start</button>
+          </div>
+      )}
+      {/* Render the typing interface if the test is in progress */}
+      {!showPrompt && !isFinished && (
+          <div>
+              <Timer timeLeft={timeLeft} />
+              {mode === 'words' ? (
+                  <>
+                      <WordDisplay word={currentWord} input={input} />
+                      <TypingInput input={input} handleInputChange={handleInputChange} />
+                  </>
+              ) : (
+                  <>
+                      <ParagraphDisplay paragraph={paragraph} input={input} />
+                      <TypingInput input={input} handleInputChange={handleInputChange} />
+                  </>
+              )}
+          </div>
+      )}
+      {/* Render results and feedback when the test is finished */}
+      {isFinished && (
+          <div>
+              <h2>Time's Up!</h2>
+              {mode === 'words' ? (
+                  <>
+                      <h3>Words Per Minute (WPM): {calculateWPM()}</h3>
+                      <h3>Accuracy: {calculateAccuracy()}%</h3>
+                      <h3>{getFeedback(calculateWPM())}</h3>
+                      <h3>{getAccuracyFeedback(calculateAccuracy())}</h3>
+                      <h3>The average adult typing speed is 35-40 WPM</h3>
+                  </>
+              ) : (
+                  <ParagraphMetrics input={input} paragraph={paragraph} timeLeft={timeLeft} />
+              )}
+              <button onClick={handleStart} className="start-button">Try Again</button>
+              <button onClick={handleGoBack} className="start-button">Go Back</button>
+          </div>
+      )}
+  </div>
+);
+};
 
+export default App;
 
 
