@@ -146,6 +146,23 @@ const getAccuracyFeedback = (accuracy) => {
   return 'Your accuracy needs improvement.';
 };
 
+// Handle the action when "Go Back" is clicked
+const handleGoBack = () => {
+  setShowPrompt(true);
+  setIsFinished(false);
+  setIsStarted(false);
+  setDifficulty(null);
+  setParagraphDifficulty(null);
+  setMode('words');
+};
+
+// Determine if the start button should be disabled based on selected mode and difficulty
+const isStartButtonDisabled = () => {
+  if (mode === 'words' && difficulty === null) return true;
+  if (mode === 'paragraph' && paragraphDifficulty === null) return true;
+  return !mode;
+};
+
 
 
 
