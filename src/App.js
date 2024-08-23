@@ -85,4 +85,43 @@ const App = () => {
   }
 };
 
+// Function to handle changes in user input
+const handleInputChange = (e) => {
+  const value = e.target.value;
+  setInput(value);
+
+  if (mode === 'words') {
+      // In word mode, check for correct and incorrect words
+      if (value.endsWith(' ')) {
+          const word = value.trim();
+          if (word === currentWord) {
+              setCorrectWords(prev => prev + 1);
+              setCurrentWord(getRandomWord(words));
+          } else {
+              setIncorrectWords(prev => prev + 1);
+          }
+          setInput('');
+      }
+  } else if (mode === 'paragraph') {
+      // In paragraph mode, check for correct and incorrect words
+      const inputWords = value.trim().split(/\s+/).filter(Boolean);
+      const paragraphWords = paragraph.split(/\s+/);
+
+      const correctWordCount = inputWords.reduce((count, word, index) => 
+          word === paragraphWords[index] ? count + 1 : count, 0);
+
+      const totalTypedWords = inputWords.length;
+      const totalWords = paragraphWords.length;
+
+      setCorrectWords(correctWordCount);
+      setIncorrectWords(totalTypedWords - correctWordCount);
+
+      // Check if the entire paragraph is typed correctly
+      if (value.trim() === paragraph) {
+          setIsFinished(true);
+          setIsStarted(false);
+      }
+  }
+};
+
 
