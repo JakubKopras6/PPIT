@@ -12,4 +12,6 @@ const Timer = ({ timeLeft }) => {
 
 export default Timer;
 
+// link to resource used https://dev.to/yuridevat/how-to-create-a-timer-with-react-7b9
+
 
