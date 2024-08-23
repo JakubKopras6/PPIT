@@ -29,3 +29,19 @@ const useTimer = (isStarted, timeLeft, setTimeLeft, setIsFinished, setIsStarted)
   }, [isStarted, timeLeft]);
 };
 
+// Custom hook to update content based on the mode and difficulty
+const useContentUpdate = (isStarted, mode, difficulty, paragraphDifficulty, setWords, setCurrentWord, setParagraph) => {
+  useEffect(() => {
+      if (isStarted) {
+          if (mode === 'words') {
+              // Set words and the current word for word mode
+              setWords(WORDS[difficulty]);
+              setCurrentWord(getRandomWord(WORDS[difficulty]));
+          } else if (mode === 'paragraph') {
+              // Set the paragraph for paragraph mode
+              const difficultyLevel = paragraphDifficulty || 'easy';
+              setParagraph(getRandomParagraph(PARAGRAPHS[difficultyLevel]));
+          }
+      }
+  }, [isStarted, mode, difficulty, paragraphDifficulty]);
+};
