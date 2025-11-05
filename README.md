@@ -38,7 +38,13 @@ Test and improve your typing speed in two unique modes:
 ## 🖼️ Screenshots
 
 ![App Screenshot](./src/Images/appMenu.jpg)
+
+<br><br>
+
 ![App Screenshot](./src/Images/appGame.jpg)
+
+<br><br>
+
 ![App Screenshot](./src/Images/appEnd.jpg)
 
 
