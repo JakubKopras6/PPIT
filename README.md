@@ -63,7 +63,7 @@ Test and improve your typing speed in two unique modes:
 A creative and minimal typing speed app designed to make practice engaging and effective whether you want to train your reflexes or test your accuracy over time.  
 
 
-Made for a university project. Feel free to edit and improve on this code as you fit.
+Made for a university project. Feel free to edit and improve on this code as you see fit.
 
 
 
